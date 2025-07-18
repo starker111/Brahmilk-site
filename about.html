@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us | BrahMilk</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fffdf5;
+      color: #2f2f2f;
+      line-height: 1.7;
+    }
+    .about-container {
+      max-width: 900px;
+      margin: auto;
+      padding: 3rem 1.5rem;
+    }
+    h1 {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      color: #53320e;
+    }
+    h2 {
+      margin-top: 2.5rem;
+      color: #7b4f21;
+    }
+    p {
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+    }
+    ul {
+      margin: 1rem 0 2rem 1.5rem;
+      font-size: 1.05rem;
+    }
+    li {
+      margin-bottom: 0.7rem;
+    }
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 3rem;
+      text-decoration: none;
+      color: #7b4f21;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+    
+
+
+  </style>
+  
+
+
+</head>
+
+
+<body>
+    
+  <div class="about-container">
+    <h1>Our Story</h1>
+
+    <p>
+      I’m <strong>Jaswanth Chowdary</strong>, co-founder of BrahMilk, along with my only partner <strong>Chinnigi Manivannan</strong>. BrahMilk was not born out of business ambition — it was born out of frustration, disappointment, and the need for a real solution.
+    </p>
+
+    <p>
+      Coming from a middle-class household, we used to rely on local milkmen for our daily milk needs. We were told it was “fresh cow milk,” but what we received felt more like diluted water. In truth, it often felt like they were mixing milk into water — not the other way around.
+    </p>
+
+    <p>
+      Even worse, the milk used to arrive at around <strong>10:00 AM</strong> — well after everyone had left for work or college. The quality was poor, the delivery was late, and the trust was completely broken.
+    </p>
+
+    <p>
+      That’s when we decided — enough is enough. We envisioned something better: a brand that delivers <strong>pure, hygienic, and fresh milk</strong> in a way that preserves its nutritional and spiritual value.
+    </p>
+
+    <h2>Why We Chose Glass Bottles</h2>
+    <p>
+      At BrahMilk, we chose <strong>glass bottles</strong> not just for packaging — but for preserving purity. Unlike plastic, glass:
+    </p>
+    <ul>
+      <li>Doesn’t react with milk or alter its taste</li>
+      <li>Keeps milk naturally cool and fresh longer</li>
+      <li>Is 100% reusable and eco-friendly</li>
+      <li>Looks premium and reflects hygiene and trust</li>
+    </ul>
+    <p>
+      This makes glass the <strong>purest and most respectful way</strong> to deliver milk, especially when our promise is purity itself.
+    </p>
+
+    <h2>What Makes BrahMilk Different</h2>
+    <ul>
+      <li><strong>Consistent quality:</strong> From source to sip, our milk never gets diluted.</li>
+      <li><strong>Fast doorstep delivery:</strong> No delays, no excuses — just on-time delivery.</li>
+      <li><strong>Transparent supply chain:</strong> You get what we promise, every time.</li>
+    </ul>
+
+    <h2>Rooted in Belief & Respect</h2>
+    <p>
+      Yes, this brand is deeply connected to our beliefs. In our families, <strong>milk is sacred</strong> — used in daily rituals, prayers, and nourishing everyone at home. But when the milk itself is questionable, the tradition feels broken. BrahMilk is our effort to <strong>restore the purity and integrity of milk</strong>, spiritually and nutritionally.
+    </p>
+
+    <h2>Our Vision for the Future</h2>
+    <p>
+      Over the next 1–3 years, we want BrahMilk to become a <strong>trusted household name</strong> across Telangana and beyond — known for:
+    </p>
+    <ul>
+      <li>Delivering the <strong>purest milk in India</strong></li>
+      <li>Expanding into products like ghee, paneer, and curd</li>
+      <li>Upholding honesty, hygiene, and premium quality — always</li>
+    </ul>
+    <p>
+      BrahMilk is not just a product. It's a promise. It's our mission. And we’re proud to bring that promise to your doorstep.
+    </p>
+
+    <a class="back-link" href="index.html">← Back to Home</a>
+  </div>
+  <audio id="omChant" src="audio/om.mp3" preload="auto" loop></audio>
+
+<script>
+  const omAudio = document.getElementById('omChant');
+  omAudio.volume = 0;
+  omAudio.play().catch(() => {
+    console.log("Autoplay blocked. Waiting for interaction...");
+  });
+
+  // Fade in volume after first user interaction
+  const allowAudio = () => {
+    let vol = 0;
+    omAudio.play();
+    const fade = setInterval(() => {
+      if (vol < 0.3) {
+        vol += 0.01;
+        omAudio.volume = vol;
+      } else {
+        clearInterval(fade);
+      }
+    }, 100);
+    window.removeEventListener("click", allowAudio);
+    window.removeEventListener("scroll", allowAudio);
+  };
+
+  window.addEventListener("click", allowAudio);
+  window.addEventListener("scroll", allowAudio);
+</script>
+
+</body>
+</html>

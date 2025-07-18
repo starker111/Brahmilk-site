@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About BrahMilk – Pure Milk in Glass Bottles</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=DM+Serif+Text&display=swap" rel="stylesheet">
+<!-- AOS CSS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+</head>
+<body>
+<!-- AOS Script -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+  <!-- Background wrapper for hero + about -->
+  <section class="bg-wrapper">
+    <div class="hero">
+      <div class="hero-logo">
+        <img src="images/logo.jpg" alt="BrahMilk Logo">
+      </div>
+
+      <div class="overlay">
+        <div class="content">
+          <h1>BrahMilk</h1>
+          <p class="tagline">Pure. Hygienic. Spiritual. Delivered in Glass Bottles.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="about">
+      <div class="about-content" data-aos="fade-up">
+        <h2>About Us</h2>
+        <p>
+          BrahMilk is on a mission to deliver pure, high-cream milk in hygienic glass bottles — preserving both tradition and health. Inspired by spiritual care and ancient purity, our milk reflects quality in every drop.
+        </p>
+        <a href="about.html" class="read-more">→ Read more</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Info -->
+  <section class="product-info">
+    <div class="product-content" data-aos="fade-right">
+      <h2>Our Products</h2>
+      <ul>
+        <li><strong>Full Cream Milk – 500ml</strong><br>Rich in cream, bottled fresh every morning.</li>
+        <li><strong>Full Cream Milk – 1L</strong><br>Perfect for families and daily use.</li>
+        <li><strong>Coming Soon:</strong> Ghee, Paneer, and Butter</li>
+      </ul>
+<a href="product.html" class="read-more">→ Read more</a>
+    </div>
+  </section>
+
+  <!-- Why Glass -->
+  <section class="why-glass">
+    <div class="glass-content" data-aos="fade-left">
+      <h2>Why Glass Bottles?</h2>
+      <p>
+        We choose glass because it's pure, reusable, and safe. Unlike plastic, it doesn’t leach chemicals into milk or spoil its taste. Glass keeps milk fresher, colder, and cleaner — as it should be.
+      </p>
+      <a href="whyglass.html" class="read-more">→ Read more</a>
+    </div>
+  </section>
+
+  <!-- Our Process -->
+  <section class="process">
+    <div class="process-content" data-aos="zoom-in">
+      <h2>Our Process</h2>
+      <p>Cow → Chilling → Testing → Glass Bottling → Delivery</p>
+      <p>We ensure every step maintains hygiene, quality, and freshness — from farm to your doorstep.</p>
+    <a href="process.html" class="read-more">→ Read more</a>
+    </div>
+  </section>
+
+<section class="gallery-section">
+  <h2 data-aos="fade-up">Our Products in Pictures</h2>
+  <div class="gallery">
+    <img src="images/milk-bottle.jpg" alt="Milk Bottle" data-aos="zoom-in">
+    <img src="images/milk-bottle1.jpg" alt="Milk Bottle" data-aos="zoom-in" data-aos-delay="100">
+    <img src="images/milk-bottle-2.jpg" alt="Milk Bottle" data-aos="zoom-in" data-aos-delay="200">
+  </div>
+</section>
+
+
+
+
+  <!-- Contact Info (For Trust) -->
+  <footer>
+    <div class="footer-content">
+      <h3>BrahMilk</h3>
+      <p>Contact us for feedback or collaboration:</p>
+      <p><strong>Phone:</strong> +91 93935 16192</p>
+      <p><strong>WhatsApp:</strong> <a href="https://wa.me/919393516192" target="_blank">Message Us</a></p>
+      <p><strong>Location:</strong> Telangana, India</p>
+      <p class="copyright">
+        © 2025 BrahMilk. All rights reserved.
+      </p>
+    </div>
+  </footer>
+<audio id="omChant" src="audio/om.mp3" preload="auto" loop></audio>
+
+<script>
+  const omAudio = document.getElementById('omChant');
+  omAudio.volume = 0;
+  omAudio.play().catch(() => {
+    console.log("Autoplay blocked. Waiting for interaction...");
+  });
+
+  // Fade in volume after first user interaction
+  const allowAudio = () => {
+    let vol = 0;
+    omAudio.play();
+    const fade = setInterval(() => {
+      if (vol < 0.3) {
+        vol += 0.01;
+        omAudio.volume = vol;
+      } else {
+        clearInterval(fade);
+      }
+    }, 100);
+    window.removeEventListener("click", allowAudio);
+    window.removeEventListener("scroll", allowAudio);
+  };
+
+  window.addEventListener("click", allowAudio);
+  window.addEventListener("scroll", allowAudio);
+</script>
+
+
+</body>
+</html>

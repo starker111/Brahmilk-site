@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Process | BrahmMilk</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fffdf5;
+      color: #3a2f1c;
+    }
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 3rem 1.5rem;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2.6rem;
+      color: #5e3c1c;
+      margin-bottom: 2rem;
+    }
+    .step {
+      background: #ffffff;
+      border-left: 6px solid #e8c597;
+      margin-bottom: 2rem;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+    .step:hover {
+      transform: scale(1.015);
+    }
+    .step h2 {
+      margin-top: 0;
+      color: #7a4e20;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+    }
+    .step h2 i {
+      font-size: 1.6rem;
+      margin-right: 10px;
+      color: #c2995c;
+    }
+    .step p {
+      margin: 0.8rem 0 0;
+      color: #444;
+    }
+    .intro-text {
+      text-align: center;
+      max-width: 720px;
+      margin: auto;
+      margin-bottom: 3rem;
+      font-size: 1.1rem;
+      color: #444;
+    }
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 3rem;
+      text-decoration: none;
+      color: #7b4f21;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+  <script src="https://kit.fontawesome.com/a4b6d66007.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container">
+    <h1 data-aos="fade-down">Our Milk Journey</h1>
+    <p class="intro-text" data-aos="fade-up">
+      At <strong>BrahmMilk</strong>, we treat milk not just as a product — but as a sacred responsibility. Here's how we maintain purity and trust in every bottle, every day.
+    </p>
+
+    <div class="step" data-aos="fade-right">
+      <h2><i class="fas fa-cow"></i> 1. Sourcing from Healthy Cows</h2>
+      <p>We partner with local farmers who raise cows ethically. They're grass-fed, well-treated, and milked with care — because healthy cows produce the purest milk.</p>
+    </div>
+
+    <div class="step" data-aos="fade-left">
+      <h2><i class="fas fa-snowflake"></i> 2. Instant Chilling</h2>
+      <p>Collected milk is immediately chilled below 4°C to lock freshness and prevent spoilage, preserving taste and nutrition from the very start.</p>
+    </div>
+
+    <div class="step" data-aos="fade-right">
+      <h2><i class="fas fa-shield-alt"></i> 3. Zero Adulteration</h2>
+      <p>No mixing. No water. No chemicals. Just full-cream, lab-tested milk — exactly the way nature intended. We don't compromise on purity.</p>
+    </div>
+
+    <div class="step" data-aos="fade-left">
+      <h2><i class="fas fa-glass-whiskey"></i> 4. Packed in Glass Bottles</h2>
+      <p>We use reusable, non-toxic glass bottles to keep your milk safe and hygienic. It’s not just premium — it’s practical and eco-friendly too.</p>
+    </div>
+
+    <div class="step" data-aos="fade-right">
+      <h2><i class="fas fa-hand-sparkles"></i> 5. Sanitized Handling</h2>
+      <p>Our bottles and tools are sterilized before every use. We follow strict hygiene protocols to ensure every bottle is untouched by human hands during packing.</p>
+    </div>
+
+    <div class="step" data-aos="fade-left">
+      <h2><i class="fas fa-truck"></i> 6. Fast Morning Delivery</h2>
+      <p>Milk is delivered to your doorstep before sunrise — fresh, clean, and ready to serve your family with love. No delays, no excuses.</p>
+    </div>
+
+    <p class="intro-text" data-aos="fade-up">
+      With BrahmMilk, you're not just drinking milk — you're trusting a process built on values, care, and modern hygiene.
+    </p>
+
+    <a href="index.html" class="back-link">← Back to Home</a>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+  </script>
+  <audio id="omChant" src="audio/om.mp3" preload="auto" loop></audio>
+
+<script>
+  const omAudio = document.getElementById('omChant');
+  omAudio.volume = 0;
+  omAudio.play().catch(() => {
+    console.log("Autoplay blocked. Waiting for interaction...");
+  });
+
+  // Fade in volume after first user interaction
+  const allowAudio = () => {
+    let vol = 0;
+    omAudio.play();
+    const fade = setInterval(() => {
+      if (vol < 0.3) {
+        vol += 0.01;
+        omAudio.volume = vol;
+      } else {
+        clearInterval(fade);
+      }
+    }, 100);
+    window.removeEventListener("click", allowAudio);
+    window.removeEventListener("scroll", allowAudio);
+  };
+
+  window.addEventListener("click", allowAudio);
+  window.addEventListener("scroll", allowAudio);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Why Glass Bottles | BrahmMilk</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fffdf5;
+      color: #3a2f1c;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 3rem 1.5rem;
+    }
+    h1 {
+      font-size: 2.4rem;
+      text-align: center;
+      margin-bottom: 1rem;
+      color: #5c3d1b;
+    }
+    h2 {
+      color: #7a4e20;
+      margin-top: 2rem;
+    }
+    p {
+      font-size: 1rem;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+    .glass-image {
+      display: block;
+      margin: 2rem auto;
+      max-width: 220px;
+      border-radius: 10px;
+    }
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 3rem;
+      text-decoration: none;
+      color: #7b4f21;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Why We Use Glass Bottles</h1>
+
+    <img src="images/milk-bottle.jpg" alt="Glass Milk Bottle" class="glass-image" />
+
+    <p>
+      At <strong>BrahmMilk</strong>, we believe purity begins not just with the source, but also with how it's delivered. That’s why we choose <strong>glass bottles</strong> — the cleanest and most respectful way to preserve our milk.
+    </p>
+
+    <h2>1. Preserves Taste & Freshness</h2>
+    <p>
+      Glass doesn’t react with milk or alter its flavor. Your milk stays exactly as it was when it left our dairy — <strong>pure, creamy, and fresh</strong>.
+    </p>
+
+    <h2>2. 100% Safe and Non-Toxic</h2>
+    <p>
+      Unlike plastic containers, glass is non-reactive and free from harmful chemicals. It doesn’t leach microplastics or toxins, even in heat.
+    </p>
+
+    <h2>3. Eco-Friendly & Reusable</h2>
+    <p>
+      Every BrahmMilk bottle is designed to be <strong>reused and recycled</strong>. We clean and sterilize bottles before each delivery — saving the environment one bottle at a time.
+    </p>
+
+    <h2>4. Hygienic by Design</h2>
+    <p>
+      Glass is easy to wash and disinfect. We maintain a <strong>closed-loop supply chain</strong> so you can enjoy milk that’s as safe as it is sacred.
+    </p>
+
+    <h2>5. It Reflects Our Premium Standard</h2>
+    <p>
+      When you see our glass bottle, you know you're getting something that’s been prepared with <strong>care, tradition, and trust</strong>. This is not just milk — it’s BrahmMilk.
+    </p>
+
+    <a href="index.html" class="back-link">← Back to Home</a>
+  </div>
+  <audio id="omChant" src="audio/om.mp3" preload="auto" loop></audio>
+
+<script>
+  const omAudio = document.getElementById('omChant');
+  omAudio.volume = 0;
+  omAudio.play().catch(() => {
+    console.log("Autoplay blocked. Waiting for interaction...");
+  });
+
+  // Fade in volume after first user interaction
+  const allowAudio = () => {
+    let vol = 0;
+    omAudio.play();
+    const fade = setInterval(() => {
+      if (vol < 0.3) {
+        vol += 0.01;
+        omAudio.volume = vol;
+      } else {
+        clearInterval(fade);
+      }
+    }, 100);
+    window.removeEventListener("click", allowAudio);
+    window.removeEventListener("scroll", allowAudio);
+  };
+
+  window.addEventListener("click", allowAudio);
+  window.addEventListener("scroll", allowAudio);
+</script>
+
+</body>
+</html>

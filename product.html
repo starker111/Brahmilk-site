@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Products | BrahMilk</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fffdf5;
+      color: #2f2f2f;
+      line-height: 1.7;
+    }
+    .products-container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 3rem 1.5rem;
+    }
+    h1 {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #53320e;
+    }
+    .product-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .product-card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .product-card img {
+      max-width: 100px;
+      margin-bottom: 1rem;
+    }
+    .product-card h3 {
+      margin-bottom: 0.5rem;
+      color: #7b4f21;
+    }
+    .product-card p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+    .coming-soon {
+      margin-top: 3rem;
+    }
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 3rem;
+      text-decoration: none;
+      color: #7b4f21;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="products-container">
+    <h1>Our Products</h1>
+
+    <p style="text-align:center; max-width: 700px; margin: auto; margin-bottom: 2rem;">
+      BrahMilk delivers <strong>pure, full-cream milk</strong> directly to your doorstep in hygienic, eco-friendly glass bottles. No water mixing. No compromise. Just 100% natural goodness.
+    </p>
+
+    <div class="product-list">
+      <!-- Product 1 -->
+      <div class="product-card">
+        <img src="images/milk-bottle.jpg" alt="500ml Milk" />
+        <h3>500ml Full Cream Milk</h3>
+        <p>Perfect for individuals or couples. Delivered fresh daily in returnable glass bottles.</p>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card">
+        <img src="images/milk-bottle1.jpg" alt="1L Milk" />
+        <h3>1L Full Cream Milk</h3>
+        <p>Ideal for small families. Thick, creamy, and completely unadulterated.</p>
+      </div>
+    </div>
+
+    <!-- Coming Soon Section -->
+    <div class="coming-soon">
+      <h2 style="text-align:center; margin-top: 3rem;">Coming Soon</h2>
+      <div class="product-list">
+        <div class="product-card">
+          <img src="images/ghee.png" alt="Ghee">
+          <h3>Desi Ghee</h3>
+          <p>Made from BrahMilk’s full cream milk. Pure, aromatic, and spiritual.</p>
+        </div>
+        <div class="product-card">
+          <img src="images/panner.png" alt="Paneer">
+          <h3>Paneer</h3>
+          <p>Soft and fresh paneer with high protein value, made from our milk.</p>
+        </div>
+        <div class="product-card">
+          <img src="images/curd.png" alt="Curd">
+          <h3>Curd</h3>
+          <p>Thick, rich curd with natural fermentation — coming soon!</p>
+        </div>
+      </div>
+    </div>
+
+    <a class="back-link" href="index.html">← Back to Home</a>
+  </div>
+</body>
+</html>
