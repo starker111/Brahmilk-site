@@ -53,69 +53,89 @@
       text-decoration: underline;
     }
     .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fffef9;
+  padding: 15px 20px;
+  border-bottom: 1px solid #eee;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 999;
+  font-family: 'Georgia', serif;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #4d3319;
+  cursor: pointer;
+}
+
+/* Default navigation links */
+.nav-links {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 2rem;
-  backdrop-filter: blur(12px);
-  background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  gap: 20px;
 }
 
-.nav-logo {
-  height: 50px;
-  border-radius: 10px;
-}
-
-.navbar nav ul {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-  margin: 0;
-}
-
-.navbar nav ul li a {
+.nav-links a {
   text-decoration: none;
-  color: #222;
-  font-weight: 600;
-  position: relative;
-  padding: 5px 0;
+  color: #4d3319;
+  font-size: 16px;
   transition: color 0.3s ease;
 }
 
-.navbar nav ul li a::after {
-  content: '';
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  left: 0;
-  bottom: 0;
-  background-color: #222;
-  transition: width 0.3s ease;
+.nav-links a:hover {
+  color: #c39c67;
 }
 
-.navbar nav ul li a:hover::after {
-  width: 100%;
+/* MOBILE STYLES */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: #fffef9;
+    padding: 20px;
+    border-top: 1px solid #eee;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 12px 0;
+    font-size: 18px;
+  }
 }
 
   </style>
 </head>
 <header class="navbar">
-  <img src="images/logo.jpg" alt="BrahmMilk Logo" class="nav-logo">
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="product.html">Products</a></li>
-      <li><a href="whyglass.html">Why Glass?</a></li>
-      <li><a href="process.html">Process</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
+  <div class="logo" id="logo-toggle">BrahMilk</div>
+
+  <nav class="nav-links" id="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="product.html">Products</a>
+    <a href="whyglass.html">Why Glass?</a>
+    <a href="process.html">Process</a>
+    <a href="contact.html">Contact</a>
   </nav>
 </header>
+<script>
+  const logoToggle = document.getElementById('logo-toggle');
+  const navLinks = document.getElementById('nav-links');
+
+  logoToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+</script>
 <body>
   <div class="container">
     <h1>Why We Use Glass Bottles</h1>
