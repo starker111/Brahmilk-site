@@ -5,42 +5,81 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About BrahMilk – Pure Milk in Glass Bottles</title>
   <link rel="stylesheet" href="css/style.css" />
+  <!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=DM+Serif+Text&display=swap" rel="stylesheet">
 <!-- AOS CSS -->
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 </head>
 <body>
+  <!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <!-- AOS Script -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
   AOS.init();
 </script>
 <header class="navbar">
-  <img src="images/logo.jpg" alt="BrahmMilk Logo" class="nav-logo">
-  <h1>BrahMilk</h1>
-  
+  <div class="logo" id="logo-toggle">BrahMilk</div>
 
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="product.html">Products</a></li>
-      <li><a href="whyglass.html">Why Glass?</a></li>
-      <li><a href="process.html">Process</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
+  <nav class="nav-links" id="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="product.html">Products</a>
+    <a href="whyglass.html">Why Glass?</a>
+    <a href="process.html">Process</a>
+    <a href="contact.html">Contact</a>
   </nav>
 </header>
+<script>
+  const logoToggle = document.getElementById('logo-toggle');
+  const navLinks = document.getElementById('nav-links');
 
-<section class="gallery-section">
-  <h2 data-aos="fade-up">Our Products in Pictures</h2>
-  <div class="gallery">
-    <img src="images/milk-bottle.jpg" alt="Milk Bottle" data-aos="zoom-in">
-    <img src="images/milk-bottle1.jpg" alt="Milk Bottle" data-aos="zoom-in" data-aos-delay="100">
-    <img src="images/milk-bottle-2.jpg" alt="Milk Bottle" data-aos="zoom-in" data-aos-delay="200">
+  logoToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+</script>
+
+<section class="product-slider">
+  <h2>Our Products in Pictures</h2>
+
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="images/milk-bottle.jpg" alt="Product 1" />
+      </div>
+      <div class="swiper-slide">
+        <img src="images/milk-bottle1.jpg" alt="Product 2" />
+      </div>
+      <div class="swiper-slide">
+        <img src="images/milk-bottle-2.jpg" alt="Product 3" />
+      </div>
+    </div>
+    <!-- Pagination & navigation -->
+    <div class="swiper-pagination"></div>
   </div>
 </section>
+<script>
+  const swiper = new Swiper('.swiper', {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      }
+    }
+  });
+</script>
+
 
       
 
@@ -139,3 +178,4 @@
 
 </body>
 </html>
+
