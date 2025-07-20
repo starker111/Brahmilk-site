@@ -10,7 +10,18 @@
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 </head>
-   <nav>
+<body>
+<!-- AOS Script -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+<header class="navbar">
+  <img src="images/logo.jpg" alt="BrahmMilk Logo" class="nav-logo">
+  <h1>BrahMilk</h1>
+  
+
+  <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About Us</a></li>
@@ -21,27 +32,17 @@
     </ul>
   </nav>
 </header>
-<body>
-<!-- AOS Script -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
 
-  <!-- Background wrapper for hero + about -->
-  <section class="bg-wrapper">
-    <div class="hero">
-      <div class="hero-logo">
-        <img src="images/logo.jpg" alt="BrahMilk Logo">
-      </div>
+<section class="gallery-section">
+  <h2 data-aos="fade-up">Our Products in Pictures</h2>
+  <div class="gallery">
+    <img src="images/milk-bottle.jpg" alt="Milk Bottle" data-aos="zoom-in">
+    <img src="images/milk-bottle1.jpg" alt="Milk Bottle" data-aos="zoom-in" data-aos-delay="100">
+    <img src="images/milk-bottle-2.jpg" alt="Milk Bottle" data-aos="zoom-in" data-aos-delay="200">
+  </div>
+</section>
 
-      <div class="overlay">
-        <div class="content">
-          <h1>BrahMilk</h1>
-          <p class="tagline">Pure. Hygienic. Spiritual. Delivered in Glass Bottles.</p>
-        </div>
-      </div>
-    </div>
+      
 
     <div class="about">
       <div class="about-content" data-aos="fade-up">
@@ -88,14 +89,7 @@
     </div>
   </section>
 
-<section class="gallery-section">
-  <h2 data-aos="fade-up">Our Products in Pictures</h2>
-  <div class="gallery">
-    <img src="images/milk-bottle.jpg" alt="Milk Bottle" data-aos="zoom-in">
-    <img src="images/milk-bottle1.jpg" alt="Milk Bottle" data-aos="zoom-in" data-aos-delay="100">
-    <img src="images/milk-bottle-2.jpg" alt="Milk Bottle" data-aos="zoom-in" data-aos-delay="200">
-  </div>
-</section>
+
 
 
 
