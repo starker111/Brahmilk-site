@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | BrahmMilk</title>
+  <link rel="stylesheet" href="style.css">
+    <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f7f6f2;
+      color: #333;
+    }
+
+    .contact-section {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 2rem;
+      background-color: #ffffffcc;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      border-radius: 12px;
+      background-image: url('logo.jpg');
+      background-repeat: no-repeat;
+      background-size: 80px;
+      background-position: top left;
+      padding-top: 5rem;
+    }
+
+    .contact-section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #6c3c0c;
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    label {
+      font-weight: 600;
+    }
+
+    input, textarea, select {
+      padding: 0.6rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .product-options {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .product-option {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .submit-btn {
+      padding: 0.75rem;
+      background-color: #6c3c0c;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: #a05a1c;
+    }
+    .navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.nav-logo {
+  height: 50px;
+  border-radius: 10px;
+}
+
+.navbar nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+}
+
+.navbar nav ul li a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 600;
+  position: relative;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+
+.navbar nav ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  background-color: #222;
+  transition: width 0.3s ease;
+}
+
+.navbar nav ul li a:hover::after {
+  width: 100%;
+}
+
+
+  </style>
+</head>
+<header class="navbar">
+  <img src="images/logo.jpg" alt="BrahmMilk Logo" class="nav-logo">
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="product.html">Products</a></li>
+      <li><a href="whyglass.html">Why Glass?</a></li>
+      <li><a href="process.html">Process</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+<body>
+  <section class="contact-section">
+    <h2>Get in Touch with BrahmMilk</h2>
+    <p>
+      Have questions or want to become a BrahmMilk customer? Fill out the form below to schedule a home visit and delivery discussion.
+    </p>
+    <form action="https://formsubmit.co/your-email@gmail.com" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+        <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" placeholder="e.g. +91924XXXXXXX" required>
+
+      <label for="area">Area / Locality:</label>
+      <input type="text" id="area" name="area" required>
+
+      <label for="address">Exact Delivery Address:</label>
+      <textarea id="address" name="address" rows="3" required></textarea>
+
+      <label for="delivery-time">Preferred Delivery Time:</label>
+      <select id="delivery-time" name="delivery_time" required>
+        <option value="Morning (5:00 – 7:00 AM)">Morning (5:00 – 7:00 AM)</option>
+        <option value="Morning (7:00 – 9:00 AM)">Morning (7:00 – 9:00 AM)</option>
+        <option value="Evening (6:00 – 8:00 PM)">Evening (6:00 – 8:00 PM)</option>
+        <option value="Evening (8:00 – 10:00 PM)">Evening (8:00 – 10:00 PM)</option>
+      </select>
+
+      <label>Select Products & Quantity:</label>
+      <div class="product-options">
+        <div class="product-option">
+          <label for="milk">Pure Cow Milk (liters):</label>
+          <input type="number" id="milk" name="milk_quantity" min="0" placeholder="e.g. 2liters">
+        </div>
+        <div class="product-option">
+          <label for="ghee">Desi Ghee (grams):</label>
+          <input type="number" id="ghee" name="ghee_quantity" min="0" placeholder="e.g. 500grams">
+        </div>
+        <div class="product-option">
+          <label for="paneer">Paneer (grams):</label>
+          <input type="number" id="paneer" name="paneer_quantity" min="0" placeholder="e.g. 250grams">
+        </div>
+        <div class="product-option">
+          <label for="curd">Curd (liters):</label>
+          <input type="number" id="curd" name="curd_quantity" min="0" placeholder="e.g. 1liter">
+        </div>
+      </div>
+
+      
+
+      <label for="meeting-time">Preferred Meeting Slot:</label>
+      <select id="meeting-time" name="meeting_time" required>
+        <optgroup label="Weekdays">
+          <option value="Monday 5:00 AM - 6:00AM">Monday 5:00 AM - 6:00AM</option>
+          <option value="Monday 6:00 AM - 7:00AM">Monday 6:00 AM - 7:00AM</option>
+          <option value="Monday 7:00 AM - 8:00AM">Monday 7:00 AM - 8:00AM</option>
+          <option value="Monday 6:00 PM - 7:00PM">Monday 6:00 PM - 7:00PM</option>
+          <option value="Monday 7:00 PM - 8:00PM">Monday 7:00 PM - 8:00PM</option>
+          <option value="Monday 8:00 PM - 9:00PM">Monday 8:00 PM - 9:00PM</option>
+          <option value="Tuesday 5:00 AM">Tuesday 5:00 AM</option>
+          <option value="Tuesday 5:20 AM">Tuesday 5:20 AM</option>
+          <option value="Tuesday 5:40 AM">Tuesday 5:40 AM</option>
+          <option value="Tuesday 6:00 AM">Tuesday 6:00 AM</option>
+          <option value="Tuesday 6:20 AM">Tuesday 6:20 AM</option>
+          <option value="Tuesday 6:40 AM">Tuesday 6:40 AM</option>
+          <option value="Wednesday 5:00 AM">Wednesday 5:00 AM</option>
+          <option value="Wednesday 5:20 AM">Wednesday 5:20 AM</option>
+          <option value="Wednesday 5:40 AM">Wednesday 5:40 AM</option>
+          <option value="Wednesday 6:00 AM">Wednesday 6:00 AM</option>
+          <option value="Wednesday 6:20 AM">Wednesday 6:20 AM</option>
+          <option value="Wednesday 6:40 AM">Wednesday 6:40 AM</option>
+          <option value="Thursday 5:00 AM">Thursday 5:00 AM</option>
+          <option value="Thursday 5:20 AM">Thursday 5:20 AM</option>
+          <option value="Thursday 5:40 AM">Thursday 5:40 AM</option>
+          <option value="Thursday 6:00 AM">Thursday 6:00 AM</option>
+          <option value="Thursday 6:20 AM">Thursday 6:20 AM</option>
+          <option value="Thursday 6:40 AM">Thursday 6:40 AM</option>
+          <option value="Friday 5:00 AM">Friday 5:00 AM</option>
+          <option value="Friday 5:20 AM">Friday 5:20 AM</option>
+          <option value="Friday 5:40 AM">Friday 5:40 AM</option>
+          <option value="Friday 6:00 AM">Friday 6:00 AM</option>
+          <option value="Friday 6:20 AM">Friday 6:20 AM</option>
+          <option value="Friday 6:40 AM">Friday 6:40 AM</option>
+          <!-- Add more weekday slots as needed -->
+        </optgroup>
+        <optgroup label="Weekend">
+          <option value="Saturday 6:00 AM">Saturday 6:00 AM</option>
+          <option value="Saturday 6:20 AM">Saturday 6:20 AM</option>
+          <option value="Saturday 6:40 AM">Saturday 6:40 AM</option>
+          <!-- Add more weekend slots -->
+        </optgroup>
+      </select>
+
+      <button type="submit" class="submit-btn">Submit Application</button>
+    </form>
+  </section>
+</body>
+</html>
