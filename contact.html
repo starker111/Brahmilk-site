@@ -142,6 +142,11 @@
 
 
   </style>
+  <meta name="description" content="Contact BrahMilk for pure milk delivery in glass bottles.">
+  <meta property="og:title" content="Contact BrahMilk">
+  <meta property="og:description" content="Contact BrahMilk for pure milk delivery in glass bottles.">
+  <meta property="og:image" content="images/milk-bottle.jpg">
+  <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 <header class="navbar">
   <div class="logo" id="logo-toggle">BrahMilk</div>
@@ -154,6 +159,8 @@
     <a href="process.html">Process</a>
     <a href="contact.html">Contact</a>
   </nav>
+
+
 </header>
 <script>
   const logoToggle = document.getElementById('logo-toggle');
@@ -169,82 +176,216 @@
     <p>
       Have questions or want to become a BrahmMilk customer? Fill out the form below to schedule a home visit and delivery discussion.
     </p>
- <form action="https://formsubmit.co/brahmilkofficial@gmail.com" method="POST">
-  <!-- Configurations -->
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_template" value="table">
-  <input type="hidden" name="_subject" value="New BrahMilk Order Request">
+   <form id="order-form" action="https://formsubmit.co/brahmilkofficial@gmail.com" method="POST">
 
-  <!-- Personal Info -->
-  <label for="name">Name:</label>
-  <input type="text" id="name" name="name" required>
+" method="POST">
+      <input type="hidden" name="_captcha" value="false">
 
-  <label for="phone">Phone Number:</label>
-  <input type="tel" id="phone" name="phone" placeholder="e.g. +91924XXXXXXX" required>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+        <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" placeholder="e.g. +91924XXXXXXX" required>
 
-  <label for="area">Area / Locality:</label>
-  <input type="text" id="area" name="area" required>
+      <label for="area">Area / Locality:</label>
+      <input type="text" id="area" name="area" required>
 
-  <label for="address">Exact Delivery Address:</label>
-  <textarea id="address" name="address" rows="3" required></textarea>
+      <label for="address">Exact Delivery Address:</label>
+      <textarea id="address" name="address" rows="3" required></textarea>
 
-  <!-- Delivery Preferences -->
-  <label for="delivery-time">Preferred Delivery Time:</label>
-  <select id="delivery-time" name="delivery_time" required>
-    <option value="Morning (5:00 – 7:00 AM)">Morning (5:00 – 7:00 AM)</option>
-    <option value="Morning (7:00 – 9:00 AM)">Morning (7:00 – 9:00 AM)</option>
-    <option value="Evening (6:00 – 8:00 PM)">Evening (6:00 – 8:00 PM)</option>
-    <option value="Evening (8:00 – 10:00 PM)">Evening (8:00 – 10:00 PM)</option>
-  </select>
+      <label for="delivery-time">Preferred Delivery Time:</label>
+      <select id="delivery-time" name="delivery_time" required>
+        <option value="Morning (5:00 – 6:00 AM)">Morning (5:00 – 6:00 AM)</option>
+        <option value="Morning (6:00 – 700 AM)">Morning (6:00 – 7:00 AM)</option>
+        <option value="Morning (7:00 – 8:00 AM)">Morning (7:00 – 8:00 AM)</option>
+      </select>
 
-  <!-- Products -->
-  <label>Select Products & Quantity:</label>
-  <div class="product-options">
-    <div class="product-option">
-      <label for="milk">Pure Cow Milk (liters):</label>
-      <input type="number" id="milk" name="milk_quantity" min="0" placeholder="e.g. 2 liters">
-    </div>
-    <div class="product-option">
-      <label for="ghee">Desi Ghee (grams):</label>
-      <input type="number" id="ghee" name="ghee_quantity" min="0" placeholder="e.g. 500 grams">
-    </div>
-    <div class="product-option">
-      <label for="paneer">Paneer (grams):</label>
-      <input type="number" id="paneer" name="paneer_quantity" min="0" placeholder="e.g. 250 grams">
-    </div>
-    <div class="product-option">
-      <label for="curd">Curd (liters):</label>
-      <input type="number" id="curd" name="curd_quantity" min="0" placeholder="e.g. 1 liter">
-    </div>
-  </div>
+      <label>Select Products & Quantity:</label>
+      <div class="product-options">
+        <div class="product-option">
+          <label for="milk">Pure Cow Milk (liters):</label>
+          <input type="number" id="milk" name="milk_quantity" min="0" placeholder="e.g. 2liters">
+        </div>
+        <div class="product-option">
+          <label for="ghee">Desi Ghee (grams):</label>
+          <input type="number" id="ghee" name="ghee_quantity" min="0" placeholder="e.g. 500grams">
+        </div>
+        <div class="product-option">
+          <label for="paneer">Paneer (grams):</label>
+          <input type="number" id="paneer" name="paneer_quantity" min="0" placeholder="e.g. 250grams">
+        </div>
+        <div class="product-option">
+          <label for="curd">Curd (liters):</label>
+          <input type="number" id="curd" name="curd_quantity" min="0" placeholder="e.g. 1liter">
+        </div>
+      </div>
 
-  <!-- Meeting Slot -->
-  <label for="meeting-time">Preferred Meeting Slot:</label>
-  <select id="meeting-time" name="meeting_time" required>
-    <optgroup label="Weekdays">
-      <option value="Monday 5:00 AM - 6:00 AM">Monday 5:00 AM - 6:00 AM</option>
-      <option value="Monday 6:00 AM - 7:00 AM">Monday 6:00 AM - 7:00 AM</option>
-      <option value="Monday 7:00 AM - 8:00 AM">Monday 7:00 AM - 8:00 AM</option>
-      <option value="Monday 6:00 PM - 7:00 PM">Monday 6:00 PM - 7:00 PM</option>
-      <option value="Monday 7:00 PM - 8:00 PM">Monday 7:00 PM - 8:00 PM</option>
-      <option value="Monday 8:00 PM - 9:00 PM">Monday 8:00 PM - 9:00 PM</option>
-      <!-- Add more as needed -->
-      <option value="Tuesday 5:00 AM">Tuesday 5:00 AM</option>
-      <option value="Tuesday 5:20 AM">Tuesday 5:20 AM</option>
-      <!-- Continue with more slots... -->
-    </optgroup>
-    <optgroup label="Weekend">
-      <option value="Saturday 6:00 AM">Saturday 6:00 AM</option>
-      <option value="Saturday 6:20 AM">Saturday 6:20 AM</option>
-      <option value="Saturday 6:40 AM">Saturday 6:40 AM</option>
-      <!-- Add more weekend slots -->
-    </optgroup>
-  </select>
+      <label for="meeting-time">Preferred Meeting Slot:</label>
+      <select id="meeting-time" name="meeting_time" required>
+        <optgroup label="Weekdays">
+          <!-- Monday -->
+          <option value="Monday 5:00 AM">Monday 5:00 AM</option>
+          <option value="Monday 5:20 AM">Monday 5:20 AM</option>
+          <option value="Monday 5:40 AM">Monday 5:40 AM</option>
+          <option value="Monday 6:00 AM">Monday 6:00 AM</option>
+          <option value="Monday 6:20 AM">Monday 6:20 AM</option>
+          <option value="Monday 6:40 AM">Monday 6:40 AM</option>
+          <option value="Monday 7:00 AM">Monday 7:00 AM</option>
+          <option value="Monday 7:20 AM">Monday 7:20 AM</option>
+          <option value="Monday 7:40 AM">Monday 7:40 AM</option>
+          <option value="Monday 8:00 AM">Monday 8:00 AM</option>
+          <option value="Monday 8:20 AM">Monday 8:20 AM</option>
+          <option value="Monday 8:40 AM">Monday 8:40 AM</option>
+          <option value="Monday 6:00 PM">Monday 6:00 PM</option>
+          <option value="Monday 6:20 PM">Monday 6:20 PM</option>
+          <option value="Monday 6:40 PM">Monday 6:40 PM</option>
+          <option value="Monday 7:00 PM">Monday 7:00 PM</option>
+          <option value="Monday 7:20 PM">Monday 7:20 PM</option>
+          <option value="Monday 7:40 PM">Monday 7:40 PM</option>
+          <option value="Monday 8:00 PM">Monday 8:00 PM</option>
+          <option value="Monday 8:20 PM">Monday 8:20 PM</option>
+          <option value="Monday 8:40 PM">Monday 8:40 PM</option>
+          <option value="Monday 9:00 PM">Monday 9:00 PM</option>
+          <!-- Tuesday -->
+          <option value="Tuesday 5:00 AM">Tuesday 5:00 AM</option>
+          <option value="Tuesday 5:20 AM">Tuesday 5:20 AM</option>
+          <option value="Tuesday 5:40 AM">Tuesday 5:40 AM</option>
+          <option value="Tuesday 6:00 AM">Tuesday 6:00 AM</option>
+          <option value="Tuesday 6:20 AM">Tuesday 6:20 AM</option>
+          <option value="Tuesday 6:40 AM">Tuesday 6:40 AM</option>
+          <option value="Tuesday 7:00 AM">Tuesday 7:00 AM</option>
+          <option value="Tuesday 7:20 AM">Tuesday 7:20 AM</option>
+          <option value="Tuesday 7:40 AM">Tuesday 7:40 AM</option>
+          <option value="Tuesday 8:00 AM">Tuesday 8:00 AM</option>
+          <option value="Tuesday 8:20 AM">Tuesday 8:20 AM</option>
+          <option value="Tuesday 8:40 AM">Tuesday 8:40 AM</option>
+          <option value="Tuesday 6:00 PM">Tuesday 6:00 PM</option>
+          <option value="Tuesday 6:20 PM">Tuesday 6:20 PM</option>
+          <option value="Tuesday 6:40 PM">Tuesday 6:40 PM</option>
+          <option value="Tuesday 7:00 PM">Tuesday 7:00 PM</option>
+          <option value="Tuesday 7:20 PM">Tuesday 7:20 PM</option>
+          <option value="Tuesday 7:40 PM">Tuesday 7:40 PM</option>
+          <option value="Tuesday 8:00 PM">Tuesday 8:00 PM</option>
+          <option value="Tuesday 8:20 PM">Tuesday 8:20 PM</option>
+          <option value="Tuesday 8:40 PM">Tuesday 8:40 PM</option>
+          <option value="Tuesday 9:00 PM">Tuesday 9:00 PM</option>
+          <!-- Wednesday -->
+          <option value="Wednesday 5:00 AM">Wednesday 5:00 AM</option>
+          <option value="Wednesday 5:20 AM">Wednesday 5:20 AM</option>
+          <option value="Wednesday 5:40 AM">Wednesday 5:40 AM</option>
+          <option value="Wednesday 6:00 AM">Wednesday 6:00 AM</option>
+          <option value="Wednesday 6:20 AM">Wednesday 6:20 AM</option>
+          <option value="Wednesday 6:40 AM">Wednesday 6:40 AM</option>
+          <option value="Wednesday 7:00 AM">Wednesday 7:00 AM</option>
+          <option value="Wednesday 7:20 AM">Wednesday 7:20 AM</option>
+          <option value="Wednesday 7:40 AM">Wednesday 7:40 AM</option>
+          <option value="Wednesday 8:00 AM">Wednesday 8:00 AM</option>
+          <option value="Wednesday 8:20 AM">Wednesday 8:20 AM</option>
+          <option value="Wednesday 8:40 AM">Wednesday 8:40 AM</option>
+          <option value="Wednesday 6:00 PM">Wednesday 6:00 PM</option>
+          <option value="Wednesday 6:20 PM">Wednesday 6:20 PM</option>
+          <option value="Wednesday 6:40 PM">Wednesday 6:40 PM</option>
+          <option value="Wednesday 7:00 PM">Wednesday 7:00 PM</option>
+          <option value="Wednesday 7:20 PM">Wednesday 7:20 PM</option>
+          <option value="Wednesday 7:40 PM">Wednesday 7:40 PM</option>
+          <option value="Wednesday 8:00 PM">Wednesday 8:00 PM</option>
+          <option value="Wednesday 8:20 PM">Wednesday 8:20 PM</option>
+          <option value="Wednesday 8:40 PM">Wednesday 8:40 PM</option>
+          <option value="Wednesday 9:00 PM">Wednesday 9:00 PM</option>
+          <!-- Thursday -->
+          <option value="Thursday 5:00 AM">Thursday 5:00 AM</option>
+          <option value="Thursday 5:20 AM">Thursday 5:20 AM</option>
+          <option value="Thursday 5:40 AM">Thursday 5:40 AM</option>
+          <option value="Thursday 6:00 AM">Thursday 6:00 AM</option>
+          <option value="Thursday 6:20 AM">Thursday 6:20 AM</option>
+          <option value="Thursday 6:40 AM">Thursday 6:40 AM</option>
+          <option value="Thursday 7:00 AM">Thursday 7:00 AM</option>
+          <option value="Thursday 7:20 AM">Thursday 7:20 AM</option>
+          <option value="Thursday 7:40 AM">Thursday 7:40 AM</option>
+          <option value="Thursday 8:00 AM">Thursday 8:00 AM</option>
+          <option value="Thursday 8:20 AM">Thursday 8:20 AM</option>
+          <option value="Thursday 8:40 AM">Thursday 8:40 AM</option>
+          <option value="Thursday 6:00 PM">Thursday 6:00 PM</option>
+          <option value="Thursday 6:20 PM">Thursday 6:20 PM</option>
+          <option value="Thursday 6:40 PM">Thursday 6:40 PM</option>
+          <option value="Thursday 7:00 PM">Thursday 7:00 PM</option>
+          <option value="Thursday 7:20 PM">Thursday 7:20 PM</option>
+          <option value="Thursday 7:40 PM">Thursday 7:40 PM</option>
+          <option value="Thursday 8:00 PM">Thursday 8:00 PM</option>
+          <option value="Thursday 8:20 PM">Thursday 8:20 PM</option>
+          <option value="Thursday 8:40 PM">Thursday 8:40 PM</option>
+          <option value="Thursday 9:00 PM">Thursday 9:00 PM</option>
+          <!-- Friday -->
+          <option value="Friday 5:00 AM">Friday 5:00 AM</option>
+          <option value="Friday 5:20 AM">Friday 5:20 AM</option>
+          <option value="Friday 5:40 AM">Friday 5:40 AM</option>
+          <option value="Friday 6:00 AM">Friday 6:00 AM</option>
+          <option value="Friday 6:20 AM">Friday 6:20 AM</option>
+          <option value="Friday 6:40 AM">Friday 6:40 AM</option>
+          <option value="Friday 7:00 AM">Friday 7:00 AM</option>
+          <option value="Friday 7:20 AM">Friday 7:20 AM</option>
+          <option value="Friday 7:40 AM">Friday 7:40 AM</option>
+          <option value="Friday 8:00 AM">Friday 8:00 AM</option>
+          <option value="Friday 8:20 AM">Friday 8:20 AM</option>
+          <option value="Friday 8:40 AM">Friday 8:40 AM</option>
+          <option value="Friday 6:00 PM">Friday 6:00 PM</option>
+          <option value="Friday 6:20 PM">Friday 6:20 PM</option>
+          <option value="Friday 6:40 PM">Friday 6:40 PM</option>
+          <option value="Friday 7:00 PM">Friday 7:00 PM</option>
+          <option value="Friday 7:20 PM">Friday 7:20 PM</option>
+          <option value="Friday 7:40 PM">Friday 7:40 PM</option>
+          <option value="Friday 8:00 PM">Friday 8:00 PM</option>
+          <option value="Friday 8:20 PM">Friday 8:20 PM</option>
+          <option value="Friday 8:40 PM">Friday 8:40 PM</option>
+          <option value="Friday 9:00 PM">Friday 9:00 PM</option>
+        </optgroup>
+        <optgroup label="Weekend">
+          <!-- Saturday -->
+          <option value="Saturday 6:00 AM">Saturday 6:00 AM</option>
+          <option value="Saturday 6:20 AM">Saturday 6:20 AM</option>
+          <option value="Saturday 6:40 AM">Saturday 6:40 AM</option>
+          <option value="Saturday 7:00 AM">Saturday 7:00 AM</option>
+          <option value="Saturday 7:20 AM">Saturday 7:20 AM</option>
+          <option value="Saturday 7:40 AM">Saturday 7:40 AM</option>
+          <option value="Saturday 8:00 AM">Saturday 8:00 AM</option>
+          <option value="Saturday 8:20 AM">Saturday 8:20 AM</option>
+          <option value="Saturday 8:40 AM">Saturday 8:40 AM</option>
+          <option value="Saturday 6:00 PM">Saturday 6:00 PM</option>
+          <option value="Saturday 6:20 PM">Saturday 6:20 PM</option>
+          <option value="Saturday 6:40 PM">Saturday 6:40 PM</option>
+          <option value="Saturday 7:00 PM">Saturday 7:00 PM</option>
+          <option value="Saturday 7:20 PM">Saturday 7:20 PM</option>
+          <option value="Saturday 7:40 PM">Saturday 7:40 PM</option>
+          <option value="Saturday 8:00 PM">Saturday 8:00 PM</option>
+          <option value="Saturday 8:20 PM">Saturday 8:20 PM</option>
+          <option value="Saturday 8:40 PM">Saturday 8:40 PM</option>
+          <option value="Saturday 9:00 PM">Saturday 9:00 PM</option>
+          <!-- Sunday -->
+          <option value="Sunday 6:00 AM">Sunday 6:00 AM</option>
+          <option value="Sunday 6:20 AM">Sunday 6:20 AM</option>
+          <option value="Sunday 6:40 AM">Sunday 6:40 AM</option>
+          <option value="Sunday 7:00 AM">Sunday 7:00 AM</option>
+          <option value="Sunday 7:20 AM">Sunday 7:20 AM</option>
+          <option value="Sunday 7:40 AM">Sunday 7:40 AM</option>
+          <option value="Sunday 8:00 AM">Sunday 8:00 AM</option>
+          <option value="Sunday 8:20 AM">Sunday 8:20 AM</option>
+          <option value="Sunday 8:40 AM">Sunday 8:40 AM</option>
+          <option value="Sunday 6:00 PM">Sunday 6:00 PM</option>
+          <option value="Sunday 6:20 PM">Sunday 6:20 PM</option>
+          <option value="Sunday 6:40 PM">Sunday 6:40 PM</option>
+          <option value="Sunday 7:00 PM">Sunday 7:00 PM</option>
+          <option value="Sunday 7:20 PM">Sunday 7:20 PM</option>
+          <option value="Sunday 7:40 PM">Sunday 7:40 PM</option>
+          <option value="Sunday 8:00 PM">Sunday 8:00 PM</option>
+          <option value="Sunday 8:20 PM">Sunday 8:20 PM</option>
+          <option value="Sunday 8:40 PM">Sunday 8:40 PM</option>
+          <option value="Sunday 9:00 PM">Sunday 9:00 PM</option>
+        </optgroup>
+      </select>
 
-  <!-- Submit -->
-  <button type="submit" class="submit-btn">Submit Application</button>
-</form>
-
+      <button type="submit" class="submit-btn">Submit Application</button>
+    </form>
   </section>
+  <img src="images/milk-bottle.jpg" alt="BrahMilk glass bottle" style="display:none;" />
 </body>
 </html>
+
